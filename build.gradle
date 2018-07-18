@@ -9,14 +9,14 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'idea'
 
 group = 'com.jenkinsTest'
 version = '1.0'
@@ -30,7 +30,14 @@ repositories {
     mavenLocal()
 }
 
+apply plugin: 'application'
 
+mainClassName = "com.jenkins.test.DemoApplication"
+
+jar {
+    destinationDir = file("${project.rootDir}/bin/docker")
+    archiveName  = "jenkins-test" + ".${extension}"
+}
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
     compile("org.springframework.boot:spring-boot-starter-web")
