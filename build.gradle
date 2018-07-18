@@ -36,7 +36,7 @@ mainClassName = "com.jenkins.test.DemoApplication"
 
 jar {
     destinationDir = file("${project.rootDir}/bin/docker")
-    archiveName  = "jenkins-test" + ".${extension}"
+    archiveName  = "warehouse-crm" + ".${extension}"
 }
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
