@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestCtrl {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String test() {
-        return "test";
+        return "test1";
     }
 }
